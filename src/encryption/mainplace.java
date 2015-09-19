@@ -239,14 +239,14 @@ private String privatekey="110010";
                     case '7':tempchar="010111";break;
                     case '8':tempchar="000100";break;
                     case '9':tempchar="100100";break;
-                    case ' ':tempchar="001111";break;
-                   
+                    case '*':tempchar="001111";break;
+                    case '&':tempchar="111111";break;
                     default:tempchar=String.valueOf(tempmessage.charAt(i));break;
                     
                 }
                 localtemp+=tempchar;
             }
-               
+             System.out.println("249: "+localtemp);     
            // localtemp=mingwen.getText();
           StringBuffer changetext = new StringBuffer();
                 int y=0;
@@ -271,7 +271,8 @@ private String privatekey="110010";
             int length=changetext.length()/6;
             int mol=changetext.length()%6;
                 System.out.println("length: "+length);
-                    System.out.println("mol: "+mol);
+                System.out.println("mol: "+mol);
+                System.out.println("275: "+changetext);    
              StringBuilder newtext=new StringBuilder(changetext);
             for(int u=0;u<changetext.length()-mol;){
             for(int tempindex=0;tempindex<6;++tempindex){
@@ -299,7 +300,7 @@ private String privatekey="110010";
                     
                 } 
             }
-             
+                System.out.println("303: "+newtext);    
             String miwenl="";
             int lastchange=0;
             System.out.println("最终长度为： "+newtext.length());
@@ -369,7 +370,7 @@ private String privatekey="110010";
                     case "000100":tempchar="x";break;
                     case "100100":tempchar="y";break;
                     case "001111":tempchar="z";break;
-                  
+                    case "111111":tempchar="&";break;
                     default:;break;
                 }
             lastchange+=6;
@@ -447,7 +448,7 @@ private String privatekey="110010";
                     case "000100":tempchar="x";break;
                     case "100100":tempchar="y";break;
                     case "001111":tempchar="z";break;
-                  
+                    case "111111":tempchar="&";break;
                     default:;break;
                 }
                   miwenl+=tempchar;
@@ -536,7 +537,7 @@ private String privatekey="110010";
                     case 'x':tempchar="000100";break;
                     case 'y':tempchar="100100";break;
                     case 'z':tempchar="001111";break;
-                  
+                    case '&':tempchar="111111";break;
                     default:;break;
                 }
                 localtemp+=tempchar;
@@ -579,7 +580,8 @@ private String privatekey="110010";
                     
                 } 
             }
-            
+                 System.out.println(" 583: "+newtext);
+               
               System.out.println("length1: "+newtext.length());
             System.out.println("length1: "+newtext);
           
@@ -681,8 +683,8 @@ private String privatekey="110010";
                     case "010111":tempchar="7";break;
                     case "000100":tempchar="8";break;
                     case "100100":tempchar="9";break;
-                    case "001111":tempchar=" ";break;
-                  
+                    case "001111":tempchar="*";break;
+                    case "111111":tempchar="&";break;
                     default:;break;
                 }
             lastchange+=6;
